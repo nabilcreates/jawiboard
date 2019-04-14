@@ -36,5 +36,19 @@ input{
 
 #buttons{
     display: grid;
-    grid-template-columns: repeat(6, 16.7%);
+    grid-template-columns: repeat(7, 14.3%);
+}
+
+#clearButton{
+    margin: 0;
+    padding: 19px 0 0 0;
+    background: #c0392b;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#top{
+    display: grid;
+    grid-template-columns: 20% auto;
+
 }

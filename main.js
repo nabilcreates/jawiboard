@@ -4,20 +4,21 @@ class App extends React.Component{
         super();
 
         this.state = {
-            letters:['ا','ب','ت','ث','ج','چ','ح','خ','د','ذ','ر','ز','س','ش','ص','ض','ط','ظ','ع','غ','ڠ','ف','ڤ','ق','ک','ݢ','ل','م','ن','و','ۏ','ه','ة','ء','ي','ڽ','ى', 'Space','؟','؛','،ـ','٠','١','٢','٣','٤','٥','٦','٧','٨','٩','٬','٫',
+            letters:['ا','ب','ت','ث','ج','چ','ح','خ','د','ذ','ر','ز','س','ش','ص','ض','ط','ظ','ع','غ','ڠ','ف','ڤ','ق','ک','ݢ','ل','م','ن','و','ۏ','ه','ة','ء','ي','ڽ','ى', '⌨','؟','؛','،ـ','٠','١','٢','٣','٤','٥','٦','٧','٨','٩','٬','٫',
             
         ],
             value: '',
         }
 
         this.handleClick = this.handleClick.bind(this)
+        this.clearInput = this.clearInput.bind(this)
     }
 
     handleClick(e){
         let letter = e.target.innerText
         console.log(letter)
         switch(letter){
-            case 'Space':
+            case '⌨':
                 this.setState(prev => {
                     return{
                         value: prev.value.concat(' ')
@@ -33,12 +34,21 @@ class App extends React.Component{
                 })
         }
     }
+
+    clearInput(){
+        this.setState({
+            value: '',
+        })
+    }
     
     render(){
         return(
             <div>
 
-                <input id='arab_input' value={this.state.value} ></input>
+                <div id='top'>
+                    <p id='clearButton' onClick={this.clearInput} >X</p>
+                    <input id='arab_input' value={this.state.value} ></input>
+                </div>
                 
                 <div id='buttons'>
                     {this.state.letters.map(letter => {
