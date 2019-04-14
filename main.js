@@ -4,7 +4,7 @@ class App extends React.Component{
         super();
 
         this.state = {
-            letters:['ا','ب','ت','ث','ج','چ','ح','خ','د','ذ','ر','ز','س','ش','ص','ض','ط','ظ','ع','غ','ڠ','ف','ڤ','ق','ک','ݢ','ل','م','ن','و','ۏ','ه','ة','ء','ي','ڽ','ى', ' '],
+            letters:['ا','ب','ت','ث','ج','چ','ح','خ','د','ذ','ر','ز','س','ش','ص','ض','ط','ظ','ع','غ','ڠ','ف','ڤ','ق','ک','ݢ','ل','م','ن','و','ۏ','ه','ة','ء','ي','ڽ','ى', 'Space'],
             value: '',
         }
 
@@ -14,11 +14,22 @@ class App extends React.Component{
     handleClick(e){
         let letter = e.target.innerText
         console.log(letter)
-        this.setState(prev => {
-            return{
-                value: prev.value.concat(letter)
-            }
-        })
+        switch(letter){
+            case 'Space':
+                this.setState(prev => {
+                    return{
+                        value: prev.value.concat(' ')
+                    }
+                })
+                break;
+
+            default:
+                this.setState(prev => {
+                    return{
+                        value: prev.value.concat(letter)
+                    }
+                })
+        }
     }
     
     render(){
@@ -29,7 +40,7 @@ class App extends React.Component{
                 
                 <div id='buttons'>
                     {this.state.letters.map(letter => {
-                    return <p value={letter} onClick={this.handleClick} id='arab'>{letter}</p>})}
+                    return <p onClick={this.handleClick} id='arab'>{letter}</p>})}
                 </div>
             </div>
         )
