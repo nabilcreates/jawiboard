@@ -36,5 +36,5 @@ input{
 
 #buttons{
     display: grid;
-    grid-template-columns: repeat(4, 25%);
+    grid-template-columns: repeat(6, 16.7%);
 }
