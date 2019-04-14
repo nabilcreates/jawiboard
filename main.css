@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Reem+Kufi');
+
+body{
+    padding: 0;
+    margin: 0;
+    background: #222;
+    color: whitesmoke;
+}
+
+#arab_input{
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 2em;
+}
+
+#arab{
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#buttons{
+    display: grid;
+    background: #333;
+    color: whitesmoke;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+}
